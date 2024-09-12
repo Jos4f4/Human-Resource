@@ -36,11 +36,11 @@ public class WorkerResource {
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Worker> findById(@PathVariable Long id){
 		//Simulação de exceção
-		/*try {
+		try {
 			Thread.sleep(3000L);
 		}catch(InterruptedException e) {
 			e.printStackTrace();
-		}*/
+		}
 		
 		//Balaceamento de carga========
 		logger.info("PORT = " + env.getProperty("local.servr.port"));
