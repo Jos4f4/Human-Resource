@@ -1,7 +1,7 @@
 # Human-Resource
 
 # Fase 1: Comunicação simples, Feign, Ribbon
-# 1.1 Criar projeto hr-worker
+1.1 Criar projeto hr-worker
 # 1.2 Implementar projeto hr-worker
 # Script SQL
 
