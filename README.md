@@ -138,9 +138,9 @@ if (responseCode.code >= 200 && responseCode.code < 300) {
    var json = JSON.parse(responseBody);
     postman.setEnvironmentVariable('token', json.access_token);
  }
-4.12 Configuração de segurança para o servidor de configuração
+# 4.12 Configuração de segurança para o servidor de configuração
 4.13 Configurando CORS
-# Teste no navegador:
+Teste no navegador:
 
 fetch("http://localhost:8765/hr-worker/workers", {
   "headers": {
