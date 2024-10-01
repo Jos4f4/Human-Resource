@@ -125,35 +125,35 @@ Basic authorization = "Basic " + Base64.encode(client-id + ":" + client-secret)
 4.10 Autorização de recursos pelo gateway Zuul
 4.11 Deixando o Postman topVariáveis:
 
-# api-gateway: http://localhost:8765
-# config-host: http://localhost:8888
-# client-name: CLIENT-NAME
-# client-secret: CLIENT-SECRET
-# username: leia@gmail.com
-# password: 123456
-# token:
+api-gateway: http://localhost:8765
+config-host: http://localhost:8888
+client-name: CLIENT-NAME
+client-secret: CLIENT-SECRET
+username: leia@gmail.com
+password: 123456
+token:
 # Script para atribuir token à variável de ambiente do Postman:
 
-# if (responseCode.code >= 200 && responseCode.code < 300) {
-#    var json = JSON.parse(responseBody);
-#    postman.setEnvironmentVariable('token', json.access_token);
-# }
-# 4.12 Configuração de segurança para o servidor de configuração
-# 4.13 Configurando CORS
+if (responseCode.code >= 200 && responseCode.code < 300) {
+   var json = JSON.parse(responseBody);
+    postman.setEnvironmentVariable('token', json.access_token);
+ }
+4.12 Configuração de segurança para o servidor de configuração
+4.13 Configurando CORS
 # Teste no navegador:
 
-# fetch("http://localhost:8765/hr-worker/workers", {
-#  "headers": {
-#    "accept": "*/*",
-#    "accept-language": "en-US,en;q=0.9,pt-BR;q=0.8,pt;q=0.7",
-#    "sec-fetch-dest": "empty",
-#    "sec-fetch-mode": "cors",
-#    "sec-fetch-site": "cross-site"
-#  },
-#  "referrer": "http://localhost:3000",
-#  "referrerPolicy": "no-referrer-when-downgrade",
-#  "body": null,
-#  "method": "GET",
-#  "mode": "cors",
-#  "credentials": "omit"
+fetch("http://localhost:8765/hr-worker/workers", {
+  "headers": {
+    "accept": "*/*",
+    "accept-language": "en-US,en;q=0.9,pt-BR;q=0.8,pt;q=0.7",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+   "sec-fetch-site": "cross-site"
+  },
+  "referrer": "http://localhost:3000",
+  "referrerPolicy": "no-referrer-when-downgrade",
+  "body": null,
+  "method": "GET",
+  "mode": "cors",
+  "credentials": "omit"
 });
